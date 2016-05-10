@@ -26,13 +26,13 @@
 			<timezone>+05:30</timezone>
 		</developer>
 	</developers>
-	<properties> 
-	
+	<properties>
+
 		<!-- Audit4j -->
 		<audit4j.version>2.4.0-alpha3</audit4j.version>
 		<audit4j-spring.version>2.4.0-alpha4</audit4j-spring.version>
 		<audit4j-db.version>2.4.0-alpha1</audit4j-db.version>
-		
+
 		<jdk.version>1.7</jdk.version>
 		<spring.version>3.2.8.RELEASE</spring.version>
 		<spring.security.version>3.2.3.RELEASE</spring.security.version>
@@ -67,6 +67,18 @@
 			<groupId>org.audit4j</groupId>
 			<artifactId>audit4j-db</artifactId>
 			<version>${audit4j-db.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 
 		<!-- Spring 3 dependencies -->
@@ -155,16 +167,16 @@
 				</configuration>
 			</plugin>
 			<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-war-plugin</artifactId>
-    <version>2.6</version>
-    <configuration>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
- 
-    </configuration>
-</plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+
+				</configuration>
+			</plugin>
 		</plugins>
-		
+
 	</build>
 
 </project>
