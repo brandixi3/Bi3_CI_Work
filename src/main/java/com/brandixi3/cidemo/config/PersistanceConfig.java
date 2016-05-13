@@ -40,12 +40,18 @@ public class PersistanceConfig {
 	@Bean
 	public DataSource dataSource() {
 		HikariConfig config = new HikariConfig();
-		config.setDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
-		config.addDataSourceProperty("url", "jdbc:mysql://127.0.0.1:3306/demo1?createDatabaseIfNotExist=true");
-		config.addDataSourceProperty("user", "root");
-		config.addDataSourceProperty("password", "root");
-		config.setConnectionTestQuery("select 1");
-		config.setMaximumPoolSize(10);
+		config.setDataSourceClassName(env
+				.getProperty(Constants.Database.DATABASE_DRIVER_DATASOURCE_CLAZZ));
+		config.addDataSourceProperty("url",
+				env.getProperty(Constants.Database.DATABASE_URL));
+		config.addDataSourceProperty("user",
+				env.getProperty(Constants.Database.DATABASE_USERNAME));
+		config.addDataSourceProperty("password",
+				env.getProperty(Constants.Database.DATABASE_PWD));
+		config.setConnectionTestQuery(env
+				.getProperty(Constants.Database.DATABASE_CONNECTION_TEST_QUERY));
+		config.setMaximumPoolSize(Integer.valueOf(env
+				.getProperty(Constants.Database.DATABASE_MAX_POOL_SIZE)));
 		HikariDataSource ds = new HikariDataSource(config);
 		return ds;
 	}

@@ -26,6 +26,7 @@ public class DemoController {
 
     @RequestMapping(value="/demo", method=RequestMethod.POST)
     public String greetingSubmit(@ModelAttribute Item item, Model model) {
+    	inventoryService.addItem(item);
         model.addAttribute("item", item);
         return "result";
     }

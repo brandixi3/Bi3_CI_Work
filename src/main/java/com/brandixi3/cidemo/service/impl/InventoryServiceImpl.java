@@ -13,6 +13,6 @@ public class InventoryServiceImpl implements InventoryService {
 	
     @Override
     public void addItem(Item item) {        
-        //Method Body
+        inventryDao.createItem(item);
     }
 }

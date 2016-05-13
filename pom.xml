@@ -34,8 +34,8 @@
 		<audit4j-db.version>2.4.0-alpha1</audit4j-db.version>
 
 		<jdk.version>1.7</jdk.version>
-		<spring.version>3.2.8.RELEASE</spring.version>
-		<spring.security.version>3.2.3.RELEASE</spring.security.version>
+		<spring.version>4.2.6.RELEASE</spring.version>
+		<spring.security.version>4.1.0.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
 		<javax.servlet.version>3.1.0</javax.servlet.version>
 
@@ -256,14 +256,9 @@
 		<finalName>Brandixi3CIDemo</finalName>
 
 		<filters>
-			<!-- Ensures that the config.properties file is always loaded from the 
-				configuration directory of the active Maven profile. -->
 			<filter>profiles/${build.profile.id}/config.properties</filter>
 		</filters>
 		<resources>
-			<!-- Placeholders that are found from the files located in the configured 
-				resource directories are replaced with the property values found from the 
-				profile specific configuration file. -->
 			<resource>
 				<filtering>true</filtering>
 				<directory>src/main/resources</directory>
@@ -285,13 +280,11 @@
 							<goal>add-test-source</goal>
 						</goals>
 						<configuration>
-							<!-- Configures the source directory of our integration tests -->
 							<sources>
 								<source>src/integration-test/java</source>
 							</sources>
 						</configuration>
 					</execution>
-					<!-- Add a new resource directory to our build -->
 					<execution>
 						<id>add-integration-test-resources</id>
 						<phase>generate-test-resources</phase>
@@ -299,12 +292,8 @@
 							<goal>add-test-resource</goal>
 						</goals>
 						<configuration>
-							<!-- Configures the resource directory of our integration tests -->
 							<resources>
-								<!-- Placeholders that are found from the files located in the configured 
-									resource directories are replaced with the property values found from the 
-									profile specific configuration file. -->
-								<resource>
+																<resource>
 									<filtering>true</filtering>
 									<directory>src/integration-test/resources</directory>
 								</resource>
