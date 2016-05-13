@@ -9,8 +9,8 @@ import org.audit4j.core.annotation.DeIdentify;
 import org.audit4j.core.annotation.SelectionType;
 import org.springframework.stereotype.Service;
 
+import com.brandixi3.cidemo.model.Item;
 import com.brandixi3.cidemo.model.Payment;
-import com.brandixi3.cidemo.service.Item;
 import com.brandixi3.cidemo.service.PaymentService;
 
 @Service("paymentService")

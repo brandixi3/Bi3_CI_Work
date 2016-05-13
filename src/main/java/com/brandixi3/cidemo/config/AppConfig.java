@@ -11,7 +11,6 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @Configuration
 @ComponentScan({ "com.brandixi3.cidemo.*" })
-@Import({SecurityConfig.class, AuditConfig.class})
 public class AppConfig {
 
 	@Bean

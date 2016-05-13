@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Audit4j Demo Application</title>
+<title>Demo Application</title>
 </head>
 <body>
 
@@ -26,12 +26,15 @@
 		</h4>
 	</c:if>
 	
-<%-- 
-    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+
+    <form action="#" th:action="<c:url value='/addItem' />" th:object="${item}" method="post">
     	<p>Id: <input type="text" th:field="*{id}" /></p>
         <p>Message: <input type="text" th:field="*{content}" /></p>
+        <input type="hidden"                        
+        name="${_csrf.parameterName}"
+        value="${_csrf.token}"/>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form> --%>
+    </form> 
     
 	<br />
 

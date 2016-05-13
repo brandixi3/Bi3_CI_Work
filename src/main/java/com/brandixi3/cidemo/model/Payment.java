@@ -3,8 +3,6 @@ package com.brandixi3.cidemo.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.brandixi3.cidemo.service.Item;
-
 public class Payment {
 
     private Double totalPrize;

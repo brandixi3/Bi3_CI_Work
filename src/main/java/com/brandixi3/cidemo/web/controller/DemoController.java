@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.brandixi3.cidemo.model.Greeting;
+import com.brandixi3.cidemo.model.Item;
 import com.brandixi3.cidemo.service.InventoryService;
 import com.brandixi3.cidemo.service.PaymentService;
 import com.brandixi3.cidemo.service.UserService;
@@ -24,9 +24,10 @@ public class DemoController {
     @Autowired
     private PaymentService paymentService;
 
-    @RequestMapping(value="/greeting", method=RequestMethod.POST)
-    public String greetingSubmit(@ModelAttribute Greeting greeting, Model model) {
-        model.addAttribute("greeting", greeting);
+    @RequestMapping(value="/demo", method=RequestMethod.POST)
+    public String greetingSubmit(@ModelAttribute Item item, Model model) {
+        model.addAttribute("item", item);
         return "result";
     }
+    
 }
