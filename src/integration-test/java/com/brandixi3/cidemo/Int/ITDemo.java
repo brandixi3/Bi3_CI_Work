@@ -23,7 +23,7 @@ public class ITDemo {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://localhost:8080/";
+    baseUrl = "http://localhost:8080";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
@@ -40,7 +40,7 @@ public class ITDemo {
     driver.findElement(By.cssSelector("input[type=\"text\"]")).sendKeys("4");
     driver.findElement(By.xpath("(//input[@type='text'])[2]")).clear();
     driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys("ffff");
-    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
+    //driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
     driver.findElement(By.linkText("Logout")).click();
   }
 
