@@ -23,7 +23,7 @@ public class ITDemo {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://localhost:8080";
+    baseUrl = "http://bi3-ci-workshop-1609056036.us-east-1.elb.amazonaws.com";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
