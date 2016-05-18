@@ -3,7 +3,7 @@
 <body>
 
 	<h3>Welcome to demo application</h3>
-	<h4>Please login before access the <a href="demo3">Demo Page3</a></h4>
+	<h4>Please login before access the <a href="demo">Demo Page</a></h4>
 	
 	User: test <br/>
 	Passeord: 123
