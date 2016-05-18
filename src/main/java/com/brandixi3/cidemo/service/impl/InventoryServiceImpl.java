@@ -10,7 +10,7 @@ import com.brandixi3.cidemo.service.InventoryService;
 @Service("inventoryService")
 public class InventoryServiceImpl implements InventoryService {
 
-	@Autowired
+	@Autowired 
 	private InventryDao inventryDao;
 	
     @Override
