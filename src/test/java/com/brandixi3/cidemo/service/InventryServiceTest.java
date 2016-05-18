@@ -9,6 +9,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
+import com.brandixi3.cidemo.model.Item;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = TestAppConfig.class, loader = AnnotationConfigContextLoader.class)
 public class InventryServiceTest {
@@ -24,6 +26,6 @@ public class InventryServiceTest {
 	
 	@Test
 	public void testAddItem(){
-		//this.inventoryService.addItem(new Item());
+		this.inventoryService.addItem(new Item());
 	}
 }
