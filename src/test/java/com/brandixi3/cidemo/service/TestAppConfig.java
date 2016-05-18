@@ -29,7 +29,7 @@ public class TestAppConfig {
 	 * @return the inventry dao
 	 */
 	@Bean
-	public InventryDao myMock() {
+	public InventryDao inventryDao() {
 		return Mockito.mock(InventryDao.class);
 	}
 }
