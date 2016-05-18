@@ -9,20 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.brandixi3.cidemo.model.Item;
 import com.brandixi3.cidemo.service.InventoryService;
-import com.brandixi3.cidemo.service.PaymentService;
-import com.brandixi3.cidemo.service.UserService;
 
 @Controller
 public class DemoController {
 
     @Autowired
     private InventoryService inventoryService;
-
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private PaymentService paymentService;
 
     @RequestMapping(value="/demo", method=RequestMethod.POST)
     public String greetingSubmit(@ModelAttribute Item item, Model model) {
