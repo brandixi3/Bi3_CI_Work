@@ -16,78 +16,102 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ITDemo {
-  private WebDriver driver;
-  private String baseUrl;
-  private boolean acceptNextAlert = true;
-  private StringBuffer verificationErrors = new StringBuffer();
+	private WebDriver driver;
+	private String baseUrl;
+	private boolean acceptNextAlert = true;
+	private StringBuffer verificationErrors = new StringBuffer();
 
-  @Before
-  public void setUp() throws Exception {
-    driver = new FirefoxDriver();
-    baseUrl = "http://bi3-ci-workshop-1609056036.us-east-1.elb.amazonaws.com";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
+	@Before
+	public void setUp() throws Exception {
+		driver = new FirefoxDriver();
+		//baseUrl = "http://bi3-ci-workshop-1609056036.us-east-1.elb.amazonaws.com";
+		baseUrl = "localhost:8080";
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
 
-  @Test
-  public void testDemoInt() throws Exception {
-    driver.get(baseUrl + "/Brandixi3CIDemo/");
-    driver.findElement(By.linkText("Demo Page")).click();
-    driver.findElement(By.name("username")).clear();
-    driver.findElement(By.name("username")).sendKeys("test");
-    driver.findElement(By.name("password")).clear();
-    driver.findElement(By.name("password")).sendKeys("123");
-    driver.findElement(By.name("submit")).click();
-    driver.findElement(By.cssSelector("input[type=\"text\"]")).clear();
-    
-    Random rand = new Random();
-   int randomNum = 10 + rand.nextInt(1000 - 10 + 1);
-    
-    driver.findElement(By.cssSelector("input[type=\"text\"]")).sendKeys("4");
-    driver.findElement(By.xpath("(//input[@type='text'])[2]")).clear();
-    driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys("ffff");
-    //driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
-    driver.findElement(By.linkText("Logout")).click();
-  }
+	@Test
+	public void testDemoInt() throws Exception {
+		/*
+		 * driver.get(baseUrl + "/Brandixi3CIDemo/");
+		 * driver.findElement(By.linkText("Demo Page")).click();
+		 * driver.findElement(By.name("username")).clear();
+		 * driver.findElement(By.name("username")).sendKeys("test");
+		 * driver.findElement(By.name("password")).clear();
+		 * driver.findElement(By.name("password")).sendKeys("123");
+		 * driver.findElement(By.name("submit")).click();
+		 * driver.findElement(By.cssSelector("input[type=\"text\"]")).clear();
+		 * 
+		 * Random rand = new Random(); int randomNum = 10 + rand.nextInt(1000 -
+		 * 10 + 1);
+		 * 
+		 * driver.findElement(By.cssSelector("input[type=\"text\"]")).sendKeys(
+		 * "4");
+		 * driver.findElement(By.xpath("(//input[@type='text'])[2]")).clear();
+		 * driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys(
+		 * "ffff");
+		 * //driver.findElement(By.cssSelector("input[type=\"submit\"]")).click(
+		 * ); driver.findElement(By.linkText("Logout")).click();
+		 * 
+		 * 
+		 */
 
-  @After
-  public void tearDown() throws Exception {
-    driver.quit();
-    String verificationErrorString = verificationErrors.toString();
-    if (!"".equals(verificationErrorString)) {
-      fail(verificationErrorString);
-    }
-  }
+		driver.get(baseUrl + "/Brandixi3CIDemo/");
+		driver.findElement(By.linkText("Demo Page")).click();
+		driver.findElement(By.name("username")).clear();
+		driver.findElement(By.name("username")).sendKeys("test");
+		driver.findElement(By.name("password")).clear();
+		driver.findElement(By.name("password")).sendKeys("123");
+		driver.findElement(By.name("submit")).click();
+		driver.findElement(By.id("id")).clear();
+		Random rand = new Random();
+		int randomNum = 10 + rand.nextInt(1000 - 10 + 1);
+		driver.findElement(By.id("id")).sendKeys(String.valueOf(randomNum));
+		driver.findElement(By.id("content")).clear();
+		driver.findElement(By.id("content")).sendKeys("test");
+		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
+		driver.findElement(By.linkText("Logout")).click();
+	}
 
-  private boolean isElementPresent(By by) {
-    try {
-      driver.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
+	@After
+	public void tearDown() throws Exception {
+		driver.quit();
+		String verificationErrorString = verificationErrors.toString();
+		if (!"".equals(verificationErrorString)) {
+			fail(verificationErrorString);
+		}
+	}
 
-  private boolean isAlertPresent() {
-    try {
-      driver.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
+	private boolean isElementPresent(By by) {
+		try {
+			driver.findElement(by);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
 
-  private String closeAlertAndGetItsText() {
-    try {
-      Alert alert = driver.switchTo().alert();
-      String alertText = alert.getText();
-      if (acceptNextAlert) {
-        alert.accept();
-      } else {
-        alert.dismiss();
-      }
-      return alertText;
-    } finally {
-      acceptNextAlert = true;
-    }
-  }
+	private boolean isAlertPresent() {
+		try {
+			driver.switchTo().alert();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+	}
+
+	private String closeAlertAndGetItsText() {
+		try {
+			Alert alert = driver.switchTo().alert();
+			String alertText = alert.getText();
+			if (acceptNextAlert) {
+				alert.accept();
+			} else {
+				alert.dismiss();
+			}
+			return alertText;
+		} finally {
+			acceptNextAlert = true;
+		}
+	}
 }
