@@ -19,6 +19,7 @@ public class Item implements Serializable{
     @Id
     private long id;
 	
+	kk
     private String content;
 
     public long getId() {
