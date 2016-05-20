@@ -2,6 +2,7 @@ package com.brandixi3.cidemo.dao.impl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +17,7 @@ public class InventryDaoImpl implements InventryDao{
     private EntityManager entityManager;
 
     @Override
+    @Transactional
     public final Item createItem(final Item t) {
         entityManager.persist(t);
         entityManager.flush();

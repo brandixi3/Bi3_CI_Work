@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@page session="true"%>
 <html>
 <head>
@@ -27,14 +28,18 @@
 	</c:if>
 	
 
-    <form action="#" th:action="<c:url value='/addItem' />" th:object="${item}" method="post">
-    	<p>Id: <input type="text" th:field="*{id}" /></p>
-        <p>Message: <input type="text" th:field="*{content}" /></p>
-        <input type="hidden"                        
+    <form:form action="demo" commandName="item" method="POST">
+    	<p>Id:
+    	<form:input path="id" />
+    	</p>
+        <p>Content:
+        <form:input path="content" />
+        </p>
+        <%-- <input type="hidden"                        
         name="${_csrf.parameterName}"
-        value="${_csrf.token}"/>
+        value="${_csrf.token}"/> --%>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form> 
+    </form:form> 
     
 	<br />
 

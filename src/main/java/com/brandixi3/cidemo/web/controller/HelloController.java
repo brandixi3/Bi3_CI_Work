@@ -23,14 +23,14 @@ public class HelloController {
         return model;
     }
 
-    @RequestMapping(value = "/demo**", method = RequestMethod.GET)
+ /*   @RequestMapping(value = "/demo**", method = RequestMethod.GET)
     public ModelAndView adminPage() {
         ModelAndView model = new ModelAndView();
         model.addObject("title", "Sample Secured page");
         model.addObject("message", "This is protected page!");
         model.setViewName("demo");
         return model;
-    }
+    }*/
 
     // @Audit
     @RequestMapping(value = "/login", method = RequestMethod.GET)

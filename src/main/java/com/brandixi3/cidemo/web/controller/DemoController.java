@@ -16,8 +16,18 @@ public class DemoController {
     @Autowired
     private InventoryService inventoryService;
 
+    @RequestMapping(value="/demo", method=RequestMethod.GET)
+    public String itemView( Model model) {
+    	model.addAttribute("item", new Item());
+    	return "demo";
+    }
+    
     @RequestMapping(value="/demo", method=RequestMethod.POST)
-    public String greetingSubmit(@ModelAttribute Item item, Model model) {
+    public String itemSubmit(@ModelAttribute("item") Item item, Model model) {
+    	System.out.println("=============");
+    	System.out.println(item.getContent());
+    	System.out.println(item.getId());
+    	
     	inventoryService.addItem(item);
         model.addAttribute("item", item);
         return "result";
