@@ -2,6 +2,7 @@ package com.brandixi3.cidemo.Int;
 
 import static org.junit.Assert.fail;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -37,6 +38,10 @@ public class ITDemo {
     driver.findElement(By.name("password")).sendKeys("123");
     driver.findElement(By.name("submit")).click();
     driver.findElement(By.cssSelector("input[type=\"text\"]")).clear();
+    
+    Random rand = new Random();
+   int randomNum = minimum + rand.nextInt((1000 - 1) + 1);
+    
     driver.findElement(By.cssSelector("input[type=\"text\"]")).sendKeys("4");
     driver.findElement(By.xpath("(//input[@type='text'])[2]")).clear();
     driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys("ffff");
