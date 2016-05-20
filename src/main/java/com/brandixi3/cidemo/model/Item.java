@@ -16,8 +16,8 @@ public class Item implements Serializable{
 	 */
 	private static final long serialVersionUID = 9207462009501736621L;
 	
-	@Id
-	private long id;
+    @Id
+    private long id;
 	
     private String content;
 
