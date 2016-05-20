@@ -40,7 +40,7 @@ public class ITDemo {
     driver.findElement(By.cssSelector("input[type=\"text\"]")).clear();
     
     Random rand = new Random();
-   int randomNum = minimum + rand.nextInt((1000 - 1) + 1);
+   int randomNum = 10 + rand.nextInt(1000 - 10 + 1);
     
     driver.findElement(By.cssSelector("input[type=\"text\"]")).sendKeys("4");
     driver.findElement(By.xpath("(//input[@type='text'])[2]")).clear();
