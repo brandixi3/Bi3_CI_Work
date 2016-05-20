@@ -24,37 +24,14 @@ public class ITDemo {
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
-		//baseUrl = "http://bi3-ci-workshop-1609056036.us-east-1.elb.amazonaws.com";
-		baseUrl = "localhost:8080";
+		baseUrl = "http://bi3-ci-workshop-1609056036.us-east-1.elb.amazonaws.com";
+		//baseUrl = "localhost:8080";
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
 	@Test
 	public void testDemoInt() throws Exception {
-		/*
-		 * driver.get(baseUrl + "/Brandixi3CIDemo/");
-		 * driver.findElement(By.linkText("Demo Page")).click();
-		 * driver.findElement(By.name("username")).clear();
-		 * driver.findElement(By.name("username")).sendKeys("test");
-		 * driver.findElement(By.name("password")).clear();
-		 * driver.findElement(By.name("password")).sendKeys("123");
-		 * driver.findElement(By.name("submit")).click();
-		 * driver.findElement(By.cssSelector("input[type=\"text\"]")).clear();
-		 * 
-		 * Random rand = new Random(); int randomNum = 10 + rand.nextInt(1000 -
-		 * 10 + 1);
-		 * 
-		 * driver.findElement(By.cssSelector("input[type=\"text\"]")).sendKeys(
-		 * "4");
-		 * driver.findElement(By.xpath("(//input[@type='text'])[2]")).clear();
-		 * driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys(
-		 * "ffff");
-		 * //driver.findElement(By.cssSelector("input[type=\"submit\"]")).click(
-		 * ); driver.findElement(By.linkText("Logout")).click();
-		 * 
-		 * 
-		 */
 
 		driver.get(baseUrl + "/Brandixi3CIDemo/");
 		driver.findElement(By.linkText("Demo Page")).click();
